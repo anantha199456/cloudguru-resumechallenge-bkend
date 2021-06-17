@@ -10,14 +10,14 @@ resource "aws_s3_bucket" "s3_bucket" {
   }
 }
 
-resource "aws_s3_bucket" "terraform_state" {
-  bucket = "my-demo-terraform-backend"
+# resource "aws_s3_bucket" "terraform_state" {
+#   bucket = "my-demo-terraform-backend"
 
-  versioning {
-    enabled = true
-  }
+#   versioning {
+#     enabled = true
+#   }
   
-}
+# }
 
 resource "aws_cloudfront_origin_access_identity" "origin_access_identity" {
   comment = "origin-access-identity/${var.bucket_name}"
