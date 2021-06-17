@@ -151,14 +151,14 @@ jobs:
           mv counter.zip ~/work/cloudguru-resumechallenge-main/cloudguru-resumechallenge-main/setups/files_to_upload/
           ls -la ~/work/cloudguru-resumechallenge-main/cloudguru-resumechallenge-main/setups/files_to_upload/
 
-      - name: 'Terraform Apply'
-        if: steps.plan.outputs.tf_actions_plan_has_changes == 'true'
-        uses: hashicorp/terraform-github-actions@master
-        with:
-          tf_actions_version: ${{ env.tf_version }}
-          tf_actions_subcommand: 'apply'
-          tf_actions_working_dir: ${{ env.tf_working_dir }}
-          tf_actions_comment: false
+      # - name: 'Terraform Apply'
+      #   if: steps.plan.outputs.tf_actions_plan_has_changes == 'true'
+      #   uses: hashicorp/terraform-github-actions@master
+      #   with:
+      #     tf_actions_version: ${{ env.tf_version }}
+      #     tf_actions_subcommand: 'apply'
+      #     tf_actions_working_dir: ${{ env.tf_working_dir }}
+      #     tf_actions_comment: false
 
       - name: 'Terraform Destroy'
         uses: hashicorp/terraform-github-actions@master
