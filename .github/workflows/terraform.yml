@@ -134,7 +134,7 @@ jobs:
 
       - name: 'Package Libraries'
         if: steps.plan.outputs.tf_actions_plan_has_changes == 'true'
-         run: |
+        run: |
           python --version
           ls -la
           mkdir -p ~/cloud-resume/python/lib/python3.7/site-packages
