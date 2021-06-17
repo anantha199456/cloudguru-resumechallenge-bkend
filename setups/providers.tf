@@ -7,4 +7,9 @@ provider "aws" {
 
 terraform {
   required_version = ">= 0.13.4"
+  backend "s3" {
+    bucket = "my-demo-terraform-backend"
+    key    = "terraform_tfstate"
+    region = "us-east-1"
+  }
 }
