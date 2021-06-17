@@ -136,12 +136,14 @@ jobs:
         if: steps.plan.outputs.tf_actions_plan_has_changes == 'true'
         run: |
           python --version
+          ls -la
           mkdir -p ~/cloud-resume/python/lib/python3.7/site-packages
           cd ~/cloud-resume/python/lib/python3.7/site-packages
-          python3.7 -m pip install -r ~/cloudguru-resumechallenge-main/requirements.txt  -t .
+          python3.7 -m pip install -r ~/work/cloudguru-resumechallenge-main/cloudguru-resumechallenge-main/requirements.txt  -t .
           zip -r python.zip .
-          mv python.zip ~/cloudguru-resumechallenge-main/setup/files_to_upload/
-          ls -la ~/cloudguru-resumechallenge-main/setup/files_to_upload/
+          mv python.zip ~/work/cloudguru-resumechallenge-main/cloudguru-resumechallenge-main/setup/files_to_upload/
+          ls -la ~~/work/cloudguru-resumechallenge-main/cloudguru-resumechallenge-main/setup/files_to_upload/
+      
       
       - name: 'Package App'
         run: |
