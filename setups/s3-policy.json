@@ -1,0 +1,11 @@
+{
+    "Version": "2012-10-17",
+    "Id": "Policy1623735164646",
+    "Statement": [{
+        "Sid": "Stmt1623735162833",
+        "Effect": "Allow",
+        "Principal": "*",
+        "Action": "s3:*",
+        "Resource": "arn:aws:s3:::my.cloudresume.com/*"
+    }]
+}
