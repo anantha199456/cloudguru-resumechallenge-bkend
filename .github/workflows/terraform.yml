@@ -147,9 +147,9 @@ jobs:
       - name: 'Package App'
         run: |
           cd ~/work/cloudguru-resumechallenge-main/cloudguru-resumechallenge-main/
-          zip -r counter.zip . -x ".*" "counter.py"
-          mv counter.zip ./setup/files_to_upload/
-          ls -la ./setup/files_to_upload/
+          zip -r counter.zip counter.py
+          mv counter.zip ~/work/cloudguru-resumechallenge-main/cloudguru-resumechallenge-main/setups/files_to_upload/
+          ls -la ~/work/cloudguru-resumechallenge-main/cloudguru-resumechallenge-main/setups/files_to_upload/
 
       - name: 'Terraform Apply'
         if: steps.plan.outputs.tf_actions_plan_has_changes == 'true'
