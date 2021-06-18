@@ -42,7 +42,7 @@ jobs:
           do
             echo $file
             if [[ $file = website/* ]]; then
-              echo "This modified file is under the 'prisma' folder."
+              echo "This modified file is under the 'website' folder."
               echo "::set-output name=run_job::true"
               break
             else
