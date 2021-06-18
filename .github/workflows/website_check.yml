@@ -31,7 +31,7 @@ jobs:
       # Step 3: Run python script
       - name: Check if website file has changed
         id: check_files
-        working-directory: .github/scripts
+        #working-directory: .github/scripts
         run: |
           repo = Repo("../../../cloudguru-resumechallenge-main")
           index = repo.index
