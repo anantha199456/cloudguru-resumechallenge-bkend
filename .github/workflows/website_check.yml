@@ -39,7 +39,7 @@ jobs:
   deploy:
     name: Upload File to S3 WWW
     needs: check
-    if: needs.check.outputs.run_job == 'true' 
+    if: needs.check.outputs.run_job == 'false'
     runs-on: ubuntu-latest
     steps:
       # Step 1: Checkout repository code 
