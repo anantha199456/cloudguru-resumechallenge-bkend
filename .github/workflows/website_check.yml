@@ -33,13 +33,28 @@ jobs:
         id: check_files
         working-directory: .github/scripts
         run: |
-          python check_website.py
+          repo = Repo("../../../cloudguru-resumechallenge-main")
+          index = repo.index
+          print("=============== list modified files ===============")
+
+          diff = repo.git.diff('HEAD~1..HEAD', name_only=True)
+          print(diff)
+          print('\n')
+
+          if "website/" in diff:
+              print("This modified file is under the 'website' folder.")
+              print("::set-output name=run_job::true")
+              exit(0) #exit return 0 == Success
+          else:
+              print('No files required for upload \n')
+              print("::set-output name=run_job::false")
+              exit(0) #exit return 1 == Failed
 
   # Job 2: Upload File to S3 Secure
   deploy:
     name: Upload File to S3 WWW
     needs: check
-    if: needs.check.outputs.run_job == 'false'
+    if: needs.check.outputs.run_job == 'true'
     runs-on: ubuntu-latest
     steps:
       # Step 1: Checkout repository code 
