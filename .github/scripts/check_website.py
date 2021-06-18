@@ -12,8 +12,8 @@ print('\n')
 if "website/" in diff:
     print("This modified file is under the 'website' folder.")
     print("::set-output name=run_job::true")
-    exit #exit return 0 == Success
+    exit(0) #exit return 0 == Success
 else:
     print('No files required for upload \n')
     print("::set-output name=run_job::false")
-    exit(1) #exit return 1 == Failed
+    exit(0) #exit return 1 == Failed
