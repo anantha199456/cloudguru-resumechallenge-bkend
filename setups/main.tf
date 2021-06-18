@@ -1,13 +1,10 @@
 
 #Static Website Hosting S3
 resource "aws_s3_bucket" "s3_bucket" {
-  bucket = "my.cloudresume.com"
+  bucket = "resume-archive_backend"
   acl    = "public-read"
   policy = file("s3-policy.json")
 
-  website {
-    index_document = "index.html"
-  }
 }
 
 # resource "aws_s3_bucket" "terraform_state" {
