@@ -41,7 +41,7 @@ jobs:
           while IFS= read -r file
           do
             echo $file
-            if [[ $file = website/ ]]; then
+            if [[ $file = website/* ]]; then
               echo "This modified file is under the 'prisma' folder."
               echo "::set-output name=run_job::true"
               break
